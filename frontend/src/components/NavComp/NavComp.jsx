@@ -1,9 +1,10 @@
-import {
-  RegisterLink,
-  LoginLink,
-} from "@kinde-oss/kinde-auth-nextjs/components";
+"use client";
+
+import { useAuthContext } from "@/providers/AuthProvider";
 import "./NavComp.css";
 const NavComp = () => {
+  const { user, userInfo } = useAuthContext();
+  console.log(userInfo);
   return (
     <div>
       <header>
@@ -25,12 +26,7 @@ const NavComp = () => {
               </li>
             </ul>
           </nav>
-          <div className="auth-buttons">
-    
-<LoginLink>Sign in</LoginLink>
-
-<RegisterLink className="join-btn">Sign up</RegisterLink>
-          </div>
+          <div className="auth-buttons"></div>
         </div>
       </header>
     </div>

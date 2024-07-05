@@ -1,5 +1,8 @@
+import { useContext } from "react";
 /* eslint-disable @next/next/no-img-element */
+
 import "./Home.css";
+
 const HomeComp = () => {
   return (
     <div>
