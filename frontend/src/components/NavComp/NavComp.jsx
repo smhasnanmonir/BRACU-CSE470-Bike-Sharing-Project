@@ -4,7 +4,6 @@ import { useAuthContext } from "@/providers/AuthProvider";
 import "./NavComp.css";
 const NavComp = () => {
   const { user, userInfo } = useAuthContext();
-  console.log(userInfo);
   return (
     <div>
       <header>

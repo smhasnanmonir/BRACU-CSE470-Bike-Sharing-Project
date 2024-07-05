@@ -34,29 +34,34 @@ const HomeComp = () => {
       </div>
 
       <section className="how-it-works pb-[45px]">
-        <div className="container">
-          <div className="steps">
-            <div className="step grid place-items-center">
+        <div className="px-[5%]">
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-[30px] justify-center place-content-center">
+            <div className="text-left">
               <img
-                className=""
-                src="https://i.ibb.co/1zwR3C8/image.png"
+                className="object-cover rounded-md h-[250px] w-full"
+                src="https://i.ibb.co/5K6sMn4/pexels-mikebirdy-114675.jpg"
                 alt="Unlock image"
               />
-              <h3>1. Unlock it</h3>
+              <h3 className="py-[15px] text-2xl font-semibold">Unlock it</h3>
               <p>Pick out a bike and use the Paddle app to scan its QR code.</p>
             </div>
-            <div className="step grid place-items-center">
-              <img src="https://i.ibb.co/1zwR3C8/image.png" alt="Ride image" />
-              <h3>2. Ride it</h3>
+            <div className="text-left">
+              <img
+                className="object-cover rounded-md h-[250px] w-full object-top"
+                src="https://i.ibb.co/zHLs7NM/pexels-pixabay-163491.jpg"
+                alt="Ride image"
+              />
+              <h3 className="py-[15px] text-2xl font-semibold">Ride it</h3>
               <p>Hop on and start cruising through the city.</p>
             </div>
-            <div className="step grid place-items-center">
-              <img src="https://i.ibb.co/1zwR3C8/image.png" alt="Park image" />
-              <h3>3. Park it</h3>
-              <p>
-                Find an open space at any Paddle docking station. When the
-                lock-in light turns green, you are all set.
-              </p>
+            <div className="text-left">
+              <img
+                className="object-cover rounded-md h-[250px] w-full"
+                src="https://i.ibb.co/mDV3vRx/pexels-pixabay-276517.jpg"
+                alt="Park image"
+              />
+              <h3 className="py-[15px] text-2xl font-semibold">Park it</h3>
+              <p>When the lock-in light turns green, you are all set.</p>
             </div>
           </div>
         </div>
@@ -64,49 +69,43 @@ const HomeComp = () => {
 
       <section className="pricing">
         <h2 className="text-xl text-center">Plans & Pricing</h2>
-        <div className="container">
+        <div className="px-[5%]">
           <div className="pricing-cards">
-            <div className="pricing-card grid place-items-center">
-              <h3>Single ride</h3>
+            <div className="bg-white p-[20px] rounded-md grid place-items-center">
+              <h3 className="text-xl font-semibold pb-[15px]">Single ride</h3>
               <img
-                src="https://i.ibb.co/FKBJWCc/image.png"
+                className="object cover w-full h-[250px] rounded-md"
+                src="https://i.ibb.co/72CT3b3/pexels-pixabay-163407-1.jpg"
                 alt="Single ride image"
               />
-              <p>
-                <i className="fas fa-dollar-sign"></i> 100 taka
-              </p>
-              <p>
-                <i className="fas fa-bicycle"></i> Go where your heart takes
-                you. (And your legs.)
-              </p>
+              <div className="text-left py-[10px]">
+                <p className="text-xl font-semibold">100 taka</p>
+                <p>Go where your heart takes you. (And your legs.)</p>
+              </div>
             </div>
-            <div className="pricing-card grid place-items-center">
-              <h3>Day pass</h3>
+            <div className="bg-white p-[20px] rounded-md grid place-items-center">
+              <h3 className="text-xl font-semibold pb-[15px]">Day pass</h3>
               <img
-                src="https://i.ibb.co/FKBJWCc/image.png"
-                alt="Day pass image"
+                className="object cover w-full h-[250px] rounded-md"
+                src="https://i.ibb.co/bj03LP0/pexels-pavel-danilyuk-5807684.jpg"
+                alt="Single ride image"
               />
-              <p>
-                <i className="fas fa-dollar-sign"></i> 1000 taka
-              </p>
-              <p>
-                <i className="fas fa-bicycle"></i> 24 hours of unlimited 45-min
-                rides on classNameic bikes.
-              </p>
+              <div className="text-left py-[10px]">
+                <p className="text-xl font-semibold">200 taka</p>
+                <p>24 hours of unlimited 45-min rides on our bikes.</p>
+              </div>
             </div>
-            <div className="pricing-card grid place-items-center">
-              <h3>Annual membership</h3>
+            <div className="bg-white p-[20px] rounded-md grid place-items-start">
+              <h3 className="text-xl font-semibold pb-[15px]">Day pass</h3>
               <img
-                src="https://i.ibb.co/FKBJWCc/image.png"
-                alt="Annual membership image"
+                className="object cover w-full h-[250px] rounded-md"
+                src="https://i.ibb.co/4f3yWKX/pexels-rachel-claire-4997809.jpg"
+                alt="Single ride image"
               />
-              <p>
-                <i className="fas fa-dollar-sign"></i> 15000 taka
-              </p>
-              <p>
-                <i className="fas fa-bicycle"></i> Unlimited 45-minute rides on
-                classNameic bikes.
-              </p>
+              <div className="text-left py-[10px]">
+                <p className="text-xl font-semibold">10,000 taka</p>
+                <p>Unlimited 45-minute rides on our all kind of bikes.</p>
+              </div>
             </div>
           </div>
         </div>
