@@ -26,8 +26,8 @@ const HomeComp = () => {
         </div>
       </section>
 
-      <div className=" py-[25px] text-center">
-        <div className="header-text">
+      <div className=" py-[25px]">
+        <div className="text-center">
           <h2 className="text-3xl font-semibold">How it works?</h2>
           <p className="subtitle text-xl">It is so easy.</p>
         </div>
@@ -95,8 +95,8 @@ const HomeComp = () => {
                 <p>24 hours of unlimited 45-min rides on our bikes.</p>
               </div>
             </div>
-            <div className="bg-white p-[20px] rounded-md grid place-items-start">
-              <h3 className="text-xl font-semibold pb-[15px]">Day pass</h3>
+            <div className="bg-white p-[20px] rounded-md grid">
+              <h3 className="text-xl font-semibold pb-[15px]">Yearly pass</h3>
               <img
                 className="object cover w-full h-[250px] rounded-md"
                 src="https://i.ibb.co/4f3yWKX/pexels-rachel-claire-4997809.jpg"
