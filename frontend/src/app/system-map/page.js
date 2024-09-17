@@ -8,7 +8,7 @@ const page = () => {
       <div className="text-center py-[10px]">
         <h1 className="text-xl py-[5px]">We are operating in these areas.</h1>
         <Link
-          href="/"
+          href="/rent"
           className="bg-yellow-200 px-2 py-2 rounded-md my-[5px] inline-block"
         >
           Book a bike right now!

@@ -9,6 +9,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   updateProfile,
+  GoogleAuthProvider,
 } from "firebase/auth";
 import { app } from "../Firebase/firebase.config";
 
@@ -56,6 +57,16 @@ const AuthProvider = ({ children }) => {
 
   //auth information
 
+  //unsubscribe
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => {
+      return unsubscribe;
+    };
+  }, []);
+
   const authInfo = {
     user,
     userInfo,
@@ -67,15 +78,6 @@ const AuthProvider = ({ children }) => {
   };
   //update auth information
 
-  //unsubscribe
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-    return () => {
-      return unsubscribe;
-    };
-  }, []);
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

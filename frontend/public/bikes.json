@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Regular Bike",
+    "Price": "100",
+    "img": "https://i.postimg.cc/kG0V2Mst/pexels-luftschnitzel-100582.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Mountain Bike",
+    "Price": "200",
+    "img": "https://i.postimg.cc/kG0V2Mst/pexels-luftschnitzel-100582.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Road Bike",
+    "Price": "300",
+    "img": "https://i.postimg.cc/kG0V2Mst/pexels-luftschnitzel-100582.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Hybrid Bike",
+    "Price": "250",
+    "img": "https://i.postimg.cc/kG0V2Mst/pexels-luftschnitzel-100582.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Electric Bike",
+    "Price": "500",
+    "img": "https://i.postimg.cc/kG0V2Mst/pexels-luftschnitzel-100582.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Folding Bike",
+    "Price": "150",
+    "img": "https://i.postimg.cc/kG0V2Mst/pexels-luftschnitzel-100582.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Cruiser Bike",
+    "Price": "180",
+    "img": "https://i.postimg.cc/kG0V2Mst/pexels-luftschnitzel-100582.jpg"
+  },
+  {
+    "id": 8,
+    "name": "BMX Bike",
+    "Price": "220",
+    "img": "https://i.postimg.cc/kG0V2Mst/pexels-luftschnitzel-100582.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Touring Bike",
+    "Price": "400",
+    "img": "https://i.postimg.cc/kG0V2Mst/pexels-luftschnitzel-100582.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Track Bike",
+    "Price": "350",
+    "img": "https://i.postimg.cc/kG0V2Mst/pexels-luftschnitzel-100582.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Cyclocross Bike",
+    "Price": "320",
+    "img": "https://i.postimg.cc/kG0V2Mst/pexels-luftschnitzel-100582.jpg"
+  }
+]

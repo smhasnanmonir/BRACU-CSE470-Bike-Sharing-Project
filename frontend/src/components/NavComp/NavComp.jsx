@@ -3,8 +3,11 @@
 import { useAuthContext } from "@/providers/AuthProvider";
 import "./NavComp.css";
 import Link from "next/link";
+
 const NavComp = () => {
-  const { user, userInfo } = useAuthContext();
+  const { user, loading, signOutFromWeb } = useAuthContext();
+  console.log(user);
+
   return (
     <div>
       <header>
@@ -19,14 +22,22 @@ const NavComp = () => {
                 <a href="#">Ride Experience</a>
               </li>
               <li>
-                <a href="#">Plans & Pricing</a>
+                <a onClick={logout} href="#">
+                  Plans & Pricing
+                </a>
               </li>
               <li>
                 {/* <a href="#">System Map</a> */}
                 <Link href="/system-map">System Map</Link>
               </li>
               <li>
-                <a href="#">Help</a>
+                {user ? (
+                  <>
+                    <button onClick={signOutFromWeb}>Logout</button>
+                  </>
+                ) : (
+                  <Link href="/login">Login</Link>
+                )}
               </li>
             </ul>
           </nav>
