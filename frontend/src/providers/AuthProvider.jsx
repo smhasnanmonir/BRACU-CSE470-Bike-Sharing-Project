@@ -16,7 +16,7 @@ import { app } from "../Firebase/firebase.config";
 export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const auth = getAuth(app);
-  const [user, setUser] = useState("hasnan");
+  const [user, setUser] = useState("");
   const [userInfo, setUserInfo] = useState([]);
   const [loading, setLoading] = useState(true);
   //email login with password
@@ -44,16 +44,16 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  //   useEffect(() => {
-  //     fetch(`http://localhost:8080/api/singleUserFromEmail/${user?.email}`)
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         setUserInfo(data);
-  //         setTimeout(() => {
-  //           setLoading(false);
-  //         }, 2000);
-  //       });
-  //   }, [user]);
+  // useEffect(() => {
+  //   fetch(`http://localhost:8099/api/getUser/${user?.email}`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setUserInfo(data);
+  //       setTimeout(() => {
+  //         setLoading(false);
+  //       }, 2000);
+  //     });
+  // }, [user]);
 
   //auth information
 

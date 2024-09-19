@@ -19,17 +19,18 @@ const NavComp = () => {
           <nav>
             <ul>
               <li>
-                <a href="#">Ride Experience</a>
-              </li>
-              <li>
-                <a onClick={logout} href="#">
-                  Plans & Pricing
-                </a>
-              </li>
-              <li>
-                {/* <a href="#">System Map</a> */}
                 <Link href="/system-map">System Map</Link>
               </li>
+              {user ? (
+                <>
+                  <li>
+                    <Link href="/dashboard">Dashboard</Link>
+                  </li>
+                </>
+              ) : (
+                <></>
+              )}
+
               <li>
                 {user ? (
                   <>

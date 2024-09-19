@@ -1,11 +1,9 @@
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import UserDashboard from "@/components/Dashboard/UserDashboard";
+
 const dashboard = async () => {
-  const { getAccessToken, getUser } = getKindeServerSession();
-  console.log(await getUser());
-  console.log("test");
   return (
     <div>
-      <h1>This is dashboard</h1>
+      <UserDashboard></UserDashboard>
     </div>
   );
 };

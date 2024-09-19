@@ -6,15 +6,21 @@ import { useState } from "react";
 
 const Register = () => {
   const { emailRegistration } = useAuthContext();
+  const [name, setName] = useState(""); // New state for name
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Basic validation
+    if (name.trim() === "") {
+      setError("Name is required");
+      return;
+    }
     if (!email.includes("@")) {
       setError("Please enter a valid email address");
       return;
@@ -26,14 +32,40 @@ const Register = () => {
 
     try {
       setLoading(true);
-      await emailRegistration(email, password); // Calling the auth function
+      await emailRegistration(email, password);
+
+      const newUser = {
+        user: {
+          name,
+          email,
+          password,
+          role: "user",
+        },
+      };
+
+      const response = await fetch("http://localhost:8099/api/create-user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
+      });
+
+      if (response.ok) {
+        console.log("User data saved to MongoDB");
+        router.push("/dashboard");
+      } else {
+        const data = await response.json();
+        setError(data.message || "Failed to save user data.");
+      }
+
       setLoading(false);
-      router.push("/dashboard"); // Redirect after successful registration
     } catch (error) {
       setLoading(false);
       setError(error.message);
     }
   };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
@@ -42,6 +74,24 @@ const Register = () => {
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
         <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
           <div>
             <label
               htmlFor="email"
@@ -56,6 +106,7 @@ const Register = () => {
               onChange={(e) => setEmail(e.target.value)}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               placeholder="Enter your email"
+              required
             />
           </div>
 
@@ -73,6 +124,7 @@ const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               placeholder="Enter your password"
+              required
             />
           </div>
 
