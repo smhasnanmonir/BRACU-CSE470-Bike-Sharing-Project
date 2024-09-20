@@ -21,6 +21,9 @@ const NavComp = () => {
               <li>
                 <Link href="/system-map">System Map</Link>
               </li>
+              <li>
+                <Link href="/rent">Bikes</Link>
+              </li>
               {user ? (
                 <>
                   <li>

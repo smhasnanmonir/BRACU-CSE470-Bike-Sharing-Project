@@ -44,16 +44,16 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:8099/api/getUser/${user?.email}`)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setUserInfo(data);
-  //       setTimeout(() => {
-  //         setLoading(false);
-  //       }, 2000);
-  //     });
-  // }, [user]);
+  useEffect(() => {
+    fetch(`http://localhost:8099/api/getUser/${user?.email}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setUserInfo(data);
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+      });
+  }, [user]);
 
   //auth information
 

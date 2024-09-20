@@ -5,21 +5,21 @@ import { useEffect, useState } from "react";
 
 const UserDashboard = () => {
   const rantedBike = "";
-  const { user } = useAuthContext();
+  const { user, userInfo, loading } = useAuthContext();
   console.log(user);
-  const [loading, setLoading] = useState(true);
-  const [userInfo, setUserInfo] = useState(false);
+  // const [loading, setLoading] = useState(true);
+  // const [userInfo, setUserInfo] = useState(false);
 
-  useEffect(() => {
-    fetch(`http://localhost:8099/api/getUser/${user?.email}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setUserInfo(data);
-        setTimeout(() => {
-          setLoading(false);
-        }, 1000);
-      });
-  }, [user]);
+  // useEffect(() => {
+  //   fetch(`http://localhost:8099/api/getUser/${user?.email}`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setUserInfo(data);
+  //       setTimeout(() => {
+  //         setLoading(false);
+  //       }, 1000);
+  //     });
+  // }, [user]);
 
   console.log(userInfo);
   return (

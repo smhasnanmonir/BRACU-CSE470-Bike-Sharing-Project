@@ -3,6 +3,7 @@ import "./globals.css";
 import NavComp from "@/components/NavComp/NavComp";
 import Footer from "@/components/Footer/Footer";
 import AuthProvider from "@/providers/AuthProvider";
+import { ReactQueryClientProvider } from "@/components/ReactQuery/ReactQuery";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,14 +15,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <AuthProvider>
-        <body className={inter.className}>
-          <NavComp></NavComp>
-          {children}
-          <Footer></Footer>
-        </body>
-      </AuthProvider>
-    </html>
+    <ReactQueryClientProvider>
+      <html lang="en">
+        <AuthProvider>
+          <body className={inter.className}>
+            <NavComp></NavComp>
+            {children}
+            <Footer></Footer>
+          </body>
+        </AuthProvider>
+      </html>
+    </ReactQueryClientProvider>
   );
 }
