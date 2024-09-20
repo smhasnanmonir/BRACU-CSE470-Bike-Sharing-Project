@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import AdminChart from "./Chart/AdminChart";
 
 const AdminDashBoard = () => {
   // State for bike information
@@ -179,7 +180,7 @@ const AdminDashBoard = () => {
   };
 
   return (
-    <div className="h-screen">
+    <div className="h-screen max-w-7xl mx-auto">
       <div className="py-[15px] flex items-center justify-center gap-4">
         <h1 className="py-[7px] text-center text-2xl font-semibold ">
           Manage Bikes
@@ -249,6 +250,7 @@ const AdminDashBoard = () => {
           </DialogContent>
         </Dialog>
       </div>
+
       <div>
         <div className="h-screen">
           <div className="py-[15px]"></div>
@@ -342,6 +344,78 @@ const AdminDashBoard = () => {
                 </div>
               </div>
             ))}
+          </div>
+          <div>
+            <h1 className="font-semibold text-center py-[15px] text-2xl">
+              Performance Analysis
+            </h1>
+            <div>
+              <div className="grid grid-cols-4 max-w-7xl mx-auto gap-5">
+                <div className="py-5 px-4 shadow-md rounded-md border border-black hover:bg-slate-200 transition-all duration-200 ease-linear">
+                  <h1 className="font-semibold ">Total Earnings</h1>
+                  <h1 className="font-bold text-2xl">$14456</h1>
+                </div>
+                <div className="py-5 px-4 shadow-md rounded-md border border-black hover:bg-slate-200 transition-all duration-200 ease-linear">
+                  <h1 className="font-semibold ">Total Customers</h1>
+                  <h1 className="font-bold text-2xl">6</h1>
+                </div>
+                <div className="py-5 px-4 shadow-md rounded-md border border-black hover:bg-slate-200 transition-all duration-200 ease-linear">
+                  <h1 className="font-semibold ">Total Bike ranted</h1>
+                  <h1 className="font-bold text-2xl">37</h1>
+                </div>
+                <div className="py-5 px-4 shadow-md rounded-md border border-black hover:bg-slate-200 transition-all duration-200 ease-linear">
+                  <h1 className="font-semibold ">Total Bike Damaged</h1>
+                  <h1 className="font-bold text-2xl">5</h1>
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-3 place-content-start gap-2 max-w-6xl py-[15px]">
+              <div className=" col-span-2">
+                <AdminChart></AdminChart>
+              </div>
+              <div>
+                <div className="border border-black rounded-md py-2 px-6">
+                  <h1 className="font-semibold py-[7px] text-2xl">
+                    Highest spender
+                  </h1>
+                  <div className="flex justify-between">
+                    <h1>Serial</h1>
+                    <h1>Name</h1>
+                    <h1>Spending</h1>
+                  </div>
+                  <div className="flex justify-between space-y-[7px]">
+                    <h1>1</h1>
+                    <h1>Hasnan</h1>
+                    <h1>$1513</h1>
+                  </div>
+                  <div className="flex justify-between space-y-[7px]">
+                    <h1>2</h1>
+                    <h1>Bamu</h1>
+                    <h1>$1327</h1>
+                  </div>
+                  <div className="flex justify-between space-y-[7px]">
+                    <h1>3</h1>
+                    <h1>Rurul</h1>
+                    <h1>$927</h1>
+                  </div>
+                  <div className="flex justify-between space-y-[7px]">
+                    <h1>4</h1>
+                    <h1>Mazo</h1>
+                    <h1>$752</h1>
+                  </div>
+                  <div className="flex justify-between space-y-[7px]">
+                    <h1>5</h1>
+                    <h1>Jony</h1>
+                    <h1>$567</h1>
+                  </div>
+                  <div className="flex justify-between space-y-[7px]">
+                    <h1>6</h1>
+                    <h1>Rui</h1>
+                    <h1>$334</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
