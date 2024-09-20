@@ -52,6 +52,8 @@ const deleteSingleBikeFromDB = async (_id: string) => {
   return result;
 };
 
+// rent a bike 
+
 export const bikeService = {
   createBikeIntoDB,
   getSingleBikeFromDB,
