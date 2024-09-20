@@ -6,11 +6,14 @@ const crateUser: RequestHandler = async (req, res, next) => {
   try {
     const { user: userData } = req.body;
     const result = await userService.createUserIntoDB(userData);
-    res.status(200).json({
-      success: true,
-      message: "User created successfully",
-      data: result,
-    });
+    if (result) {
+      res.status(200).json({
+        success: true,
+        message: "User created successfully",
+        data: result,
+      });
+      next();
+    }
   } catch (err) {
     next(err);
   }
@@ -35,8 +38,27 @@ const getSingleUserController: RequestHandler = catchAsync(
     }
   }
 );
+const getAllUserController: RequestHandler = catchAsync(
+  async (req, res, next) => {
+    const result = await userService.getAllUserFromDB();
+    if (result) {
+      res.status(200).json({
+        success: true,
+        message: "User fetched successfully",
+        data: result,
+      });
+    } else {
+      res.status(404).json({
+        success: false,
+        message: "User not found",
+        data: [],
+      });
+    }
+  }
+);
 
 export const userControllers = {
   crateUser,
   getSingleUserController,
+  getAllUserController,
 };

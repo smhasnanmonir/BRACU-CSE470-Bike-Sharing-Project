@@ -19,13 +19,20 @@ const createUserIntoDB = async (payload: TUser) => {
   }
 };
 
-//fetch single student
+//fetch single user
 const getSingleUserFromDB = async (email: string) => {
   const result = await User.findOne({ email });
+  return result;
+};
+
+//fetch all user
+const getAllUserFromDB = async () => {
+  const result = await User.find({});
   return result;
 };
 
 export const userService = {
   createUserIntoDB,
   getSingleUserFromDB,
+  getAllUserFromDB,
 };
